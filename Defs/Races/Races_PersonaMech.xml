@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+<!--  Race  -->
+
+<AlienRace.ThingDef_AlienRace ParentName="BasePawn">
+	<defName>PersonaMechRace</defName>
+	<label>Persona Mechanoid</label>
+	<description>An advanced human-like mechanoid driven by a personae grade intelligence. While at first glance these mechanoids seem fairly straight forward, the mechnites and majority of internal components deviate greatly from standard subcore based mechanoid designs. The usage standards and legal statuses of persona grade intelligence vary greatly between worlds. Some see them as equal to humans, believing they are entitled to identical baseline rights, and that forcing a persona grade intelligence to perform labor is slavery. While others consider them dangerous, or more commonly use them as expandable cognizant work forces with no regards to their continued being. On some distant coreworlds its considered illegal to utilize a persona for anything but necessary starship navigation after the events of the mechanoid wars.\n\nNormally persona cores intended for mechanoid use are gestated alongside the body itself, sadly this is not feasible to your colony, as the secrets of creating persona cores are still locked off to far more advanced worlds. However, despite it being a more unstable process, it is possible to transition an existing persona core into a mechanoid chassis, the main side effect of doing this is that the persona core will have to undergo a sort of reformatting to parts of its systems, this is necessary to integrate new hardware needed to "bridge the gap" between the mechanites and the persona core. Once transitioned the persona will revert to a childhood like state where it must re-learn many of its skills and key developments. At the end of this "childhood" the persona will be able to recover pre-transitional memories, with the finalized persona being a mix of prior experiences melded with the fresh ones.</description>
+	<descriptionHyperlinks><ThingDef>AIPersonaCore</ThingDef><ThingDef>SalvagedUnstablePowerCell</ThingDef></descriptionHyperlinks>
+
+		<statBases>
+			<MarketValue>5900</MarketValue>
+			<MoveSpeed>4.1</MoveSpeed>
+			<Flammability>0</Flammability>
+			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
+			<ComfyTemperatureMax>250</ComfyTemperatureMax>
+			<RestRateMultiplier>0</RestRateMultiplier>
+			<PainShockThreshold>9.9</PainShockThreshold>
+			<PsychicSensitivity>0.4</PsychicSensitivity>
+			<ToxicResistance>1</ToxicResistance>
+			<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+			<InjuryHealingFactor>0.5</InjuryHealingFactor>
+			<SocialImpact>0.65</SocialImpact>
+			<WorkSpeedGlobal>1.25</WorkSpeedGlobal>
+			<ResearchSpeed>1.05</ResearchSpeed>
+			<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+			<ArmorRating_Heat>2.00</ArmorRating_Heat>
+			<NegotiationAbility>0.75</NegotiationAbility>
+			<ImmunityGainSpeed>900</ImmunityGainSpeed>
+			<LeatherAmount>0</LeatherAmount>
+			<MeatAmount>0</MeatAmount>
+			<RoyalFavorValue>6</RoyalFavorValue>
+			<MechBandwidth>2</MechBandwidth>
+		</statBases>
+
+		<tools>
+			<li>
+				<label>left fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2.1</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>16</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>right fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2.1</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>16</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>6</power>
+				<cooldownTime>2.1</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+
+		<race>
+		<thinkTreeMain>PersonaMechlike</thinkTreeMain>
+		<thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
+		<intelligence>Humanlike</intelligence>
+		<hasGenders>false</hasGenders>
+		<needsRest>false</needsRest>
+		<makesFootprints>true</makesFootprints>
+		<lifeExpectancy>2500</lifeExpectancy>
+		<nameGenerator>PersonaMechStandard</nameGenerator>
+		<body>PersonaMech</body>
+		<baseBodySize>1.2</baseBodySize>
+		<baseHealthScale>1.1</baseHealthScale>
+		<foodType>Meal</foodType>
+		<baseHungerRate>-0.01</baseHungerRate>
+		<meatMarketValue>0.0</meatMarketValue>
+		<bloodDef>Filth_MachineBits</bloodDef>
+		<fleshType>PersonaMech</fleshType>
+		<manhunterOnDamageChance>1.0</manhunterOnDamageChance>
+		<manhunterOnTameFailChance>0.75</manhunterOnTameFailChance>
+		<canBePredatorPrey>false</canBePredatorPrey>
+		<deathActionWorkerClass>DeathActionWorker_BigExplosion</deathActionWorkerClass>
+			<litterSizeCurve>
+				<points>
+					<li>(0.5, 0)</li>
+					<li>(1, 1)</li>
+					<li>(1.01, 0.02)</li>
+					<li>(3.5, 0)</li>
+				</points>
+			</litterSizeCurve>
+			<lifeStageAges>
+				<li>
+					<def>HumanlikeChild</def>
+					<minAge>0</minAge>
+					<soundWounded>BulletImpact_Metal</soundWounded>
+					<soundDeath>MechSelfShutdown</soundDeath>
+				</li>
+				<li>
+					<def>HumanlikeTeenager</def>
+					<minAge>6</minAge>
+					<soundWounded>BulletImpact_Metal</soundWounded>
+					<soundDeath>MechSelfShutdown</soundDeath>
+				</li>			
+				<li>
+					<def>HumanlikeAdult</def>
+					<minAge>8</minAge>
+					<soundWounded>BulletImpact_Metal</soundWounded>
+					<soundDeath>MechSelfShutdown</soundDeath>
+				</li>
+			</lifeStageAges>
+	<lifeStageWorkSettings MayRequire="Ludeon.RimWorld.Biotech">
+				<Firefighter>0</Firefighter>
+				<Patient>0</Patient>
+				<Doctor>7</Doctor>
+				<PatientBedRest>0</PatientBedRest>
+				<Childcare MayRequire="Ludeon.RimWorld.Biotech">0</Childcare>
+				<BasicWorker>0</BasicWorker>
+				<Warden>6</Warden>
+				<Handling>4</Handling>
+				<Cooking>4</Cooking>
+				<Hunting>2</Hunting>
+				<Construction>7</Construction>
+				<Growing>2</Growing>
+				<Mining>2</Mining>
+				<PlantCutting>2</PlantCutting>
+				<Smithing>6</Smithing>
+				<Tailoring>6</Tailoring>
+				<Art>4</Art>
+				<Crafting>6</Crafting>
+				<Hauling>1</Hauling>
+				<Cleaning>0</Cleaning>
+				<Research>7</Research>
+			</lifeStageWorkSettings>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+			<specialShadowData>
+				<volume>(0.3, 0.8, 0.4)</volume>
+				<offset>(0,0,-0.3)</offset>
+			</specialShadowData>
+			<ageGenerationCurve>
+				<points>
+					<li>(14,0)</li>
+					<li>(16,0)</li>
+					<li>(25,100)</li>
+					<li>(40,25)</li>
+					<li>(60,5)</li>
+					<li>(75,2)</li>
+					<li>(90,1)</li>
+					<li>(100,0)</li>
+				</points>
+			</ageGenerationCurve>
+			<hediffGiverSets>
+				<li>Human</li>
+			</hediffGiverSets>
+		</race>
+	
+	<butcherProducts>
+		<Plasteel>10</Plasteel>
+		<Steel>15</Steel>
+		<ComponentIndustrial>1</ComponentIndustrial>
+		<BrokenAIPersonaCore>1</BrokenAIPersonaCore>
+		<MechaPartComponent>1</MechaPartComponent>
+	</butcherProducts>
+
+	<recipes>
+		<li>AdministerMechSerumHealer</li>
+		<li>Euthanize</li>
+		<li>RemoveBodyPart</li>
+		<li>InstallArchotechEyeMecha</li>
+		<li>InstallArchotechArmMecha</li>
+		<li>InstallArchotechLegMecha</li>
+		<li MayRequire="Ludeon.RimWorld.Royalty">InstallPsychicHarmonizerMecha</li>
+		<li MayRequire="Ludeon.RimWorld.Royalty">InstallPsychicReaderMecha</li>
+		<li>InstallReplacmentArmMecha</li>
+		<li>InstallReplacmentLegMecha</li>
+		<li>InstallReplacmentEyeMecha</li>
+		<li>InstallReplacmentJawMecha</li>
+		<li>InstallReplacmentShoulderMecha</li>
+		<li>InstallReplacmentEarMecha</li>
+		<li>InstallReplacmentMechaFluidReprocessor</li>
+		<li>InstallReplacmentNoseMecha</li>
+		<li>InstallDrillServiceArm</li>
+		<li>InstallTunnelerClawArm</li>
+		<li>InstallLatticeDustScrubberArray</li>
+		<li>InstallAgrihandHarvesterArm</li>
+		<li>InstallSubpersonaAssistantMecha</li>
+		<li>InstallSelfRepairProbe</li>
+		<li>InstallEltexPersonaLink</li>
+		<li>InstallFrameStabilizer</li>
+		<li>InstallLongjumpMechImplantMecha</li>
+		<li>InstallFirefoampopImplantMecha</li>
+		<li>InstallSmokepopImplantMecha</li>
+		<li>InstallEnhancedCasing</li>
+		<li>InstallWireJack</li>
+	</recipes>
+
+<alienRace>
+		<generalSettings>
+			<reproduction>
+			<childKindDef>PersonaMechColonist</childKindDef>
+			<femaleFertilityAgeFactor>
+			<points>
+				<li>(14, 0)</li>
+				<li>(20, 0)</li>
+				<li>(28, 0)</li>
+				<li>(35, 0)</li>
+				<li>(40, 0)</li>
+				<li>(45, 0)</li>
+				<li>(50, 0)</li>
+			</points>
+		</femaleFertilityAgeFactor>
+		<maleFertilityAgeFactor>
+			<points>
+				<li>(14, 0)</li>
+				<li>(18, 0)</li>
+				<li>(50, 0)</li>
+				<li>(90, 0)</li>
+			</points>
+		</maleFertilityAgeFactor>
+		</reproduction>
+
+		<growthAges>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</growthAges>
+
+		<newbornBackstoryFilter>
+			<li>
+				<categories>
+					<li>PersonaMechBackstoryBuilt</li>
+				</categories>
+				<commonality>1</commonality>
+			</li>
+		</newbornBackstoryFilter>
+		<childBackstoryFilter>
+			<li>
+				<categories>
+					<li>PersonaMechBackstoryBuilt</li>
+				</categories>
+				<commonality>1</commonality>
+			</li>  
+		</childBackstoryFilter>
+		<adultBackstoryFilter>
+			<li>
+				<categories>
+					<li>PersonaMechBackstoryBuilt</li>
+				</categories>
+				<commonality>1</commonality>
+			</li>  
+		</adultBackstoryFilter>
+
+
+		<minAgeForAdulthood>8</minAgeForAdulthood>
+					<immuneToAge>true</immuneToAge>
+					<immuneToXenophobia>false</immuneToXenophobia>
+					<maleGenderProbability>100</maleGenderProbability>
+					<humanRecipeImport>false</humanRecipeImport>
+					<allowHumanBios>false</allowHumanBios>
+					<maxDamageForSocialfight>8</maxDamageForSocialfight>
+					<forcedRaceTraitEntries>	
+						<li>
+						<defName>Asexual</defName>
+					</li>	
+					</forcedRaceTraitEntries>	
+					<disallowedTraits>
+						<li><defName>Transhumanist</defName></li>
+						<li><defName>DrugDesire</defName></li>
+						<li><defName>Cannibal</defName></li>
+						<li><defName>BodyPurist</defName></li>
+						<li><defName>Gourmand</defName></li>
+						<li><defName>NightOwl</defName></li>
+						<li><defName>Wimp</defName></li>
+						<li><defName>CreepyBreathing</defName></li>
+						<li><defName>Masochist</defName></li>
+						<li><defName>Gay</defName></li>
+						<li><defName>Bisexual</defName></li>
+						<li><defName>Immunity</defName></li>
+						<li><defName>Beauty</defName></li>
+						<li><defName>Delicate</defName></li>
+						<li MayRequire="VanillaExpanded.VanillaTraitsExpanded"><defName>VTE_ThinSkinned</defName></li>
+						<li MayRequire="VanillaExpanded.VanillaTraitsExpanded"><defName>VTE_ThickSkinned</defName></li>
+						<li MayRequire="VanillaExpanded.VanillaTraitsExpanded"><defName>VTE_RefinedPalate</defName></li>
+						<li MayRequire="VanillaExpanded.VanillaTraitsExpanded"><defName>VTE_Insomniac</defName></li>
+						<li MayRequire="VanillaExpanded.VanillaTraitsExpanded"><defName>VTE_Insatiable</defName></li>
+						<li MayRequire="VanillaExpanded.VanillaTraitsExpanded"><defName>VTE_Prude</defName></li>
+						<li MayRequire="VanillaExpanded.VanillaTraitsExpanded"><defName>VTE_Stoner</defName></li>
+						<li MayRequire="VanillaExpanded.VanillaTraitsExpanded"><defName>VTE_Lush</defName></li>
+						<li MayRequire="VanillaExpanded.VanillaTraitsExpanded"><defName>VTE_IronStomach</defName></li>
+						<li MayRequire="VanillaExpanded.VanillaTraitsExpanded"><defName>VTE_Squeamish</defName></li>
+						<li MayRequire="VanillaExpanded.VanillaTraitsExpanded"><defName>VTE_Technophobe</defName></li>
+						<li MayRequire="VanillaExpanded.VanillaTraitsExpanded"><defName>VTE_DrunkenMaster</defName></li>
+					</disallowedTraits> 
+
+					<chemicalSettings>
+						<li>
+							<chemical>Luciferium</chemical>
+							<ingestible>false</ingestible>
+						</li>
+						<li>
+							<chemical>Alcohol</chemical>
+							<ingestible>false</ingestible>
+						</li>
+						<li>
+							<chemical>Psychite</chemical>
+							<ingestible>false</ingestible>
+						</li>
+						<li>
+							<chemical>Smokeleaf</chemical>
+							<ingestible>false</ingestible>
+						</li>
+						<li>
+							<chemical>GoJuice</chemical>
+							<ingestible>false</ingestible>
+						</li>
+						<li>
+							<chemical>Ambrosia</chemical>
+							<ingestible>false</ingestible>
+						</li>
+						<li>
+							<chemical>WakeUp</chemical>
+							<ingestible>false</ingestible>
+						</li>
+					</chemicalSettings>
+					
+					
+				<alienPartGenerator>
+					<customDrawSize>(1.1, 1.1)</customDrawSize>
+					<headBodyPartDef>MechanicalHead</headBodyPartDef>	
+						<headTypes>
+							<li>Sturdy</li>
+							<li>Persona</li>
+							<li>Tri</li>
+							<li>StylishSubcore</li>
+						</headTypes>
+						<bodyTypes>
+							<li>Male</li>
+							<li>Thin</li>
+							<li>Hulk</li>
+							<li MayRequire="Ludeon.RimWorld.Biotech">Baby</li>
+								<li MayRequire="Ludeon.RimWorld.Biotech">Child</li>
+						</bodyTypes>			
+					<colorChannels>
+						<li>
+							<name>skin</name>
+							<first Class="ColorGenerator_Options">
+							<options>
+								<li>
+									<!-- Fresh White -->
+									<weight>25</weight>
+									<only>RGB(225,225,225)</only>
+								</li>
+								<li>
+									<!-- White -->
+									<weight>25</weight>
+									<only>RGB(210,210,211)</only>
+								</li>
+								<li>
+									<!-- Metal -->
+									<weight>12</weight>
+									<only>RGB(130,130,130)</only>
+								</li>
+								<li>
+									<!-- Offset --> 
+									<weight>8</weight>
+									<only>RGB(205,208,189)</only>
+								</li>
+								<li>
+									<!-- Aged --> 
+									<weight>8</weight>
+									<only>RGB(180,185,168)</only>
+								</li>
+								<li>
+									<!-- Modded Mechanoid Brown -->
+									<weight>5</weight>
+									<only>RGB(140,125,110)</only>
+								</li>
+								<li>
+									<!-- Dark Metal -->
+									<weight>12</weight>
+									<only>RGB(87,87,92)</only>
+								</li>
+								<li>
+									<!-- Rare Red -->
+									<weight>1</weight>
+									<only>RGB(133,77,77)</only>
+								</li>
+								<li>
+									<!-- Rare Military Green --> 
+									<weight>1</weight>
+									<only>RGB(105,114,99)</only>
+								</li>
+								<li>
+									<!-- Rare Blue --> 
+									<weight>1</weight>
+									<only>RGB(74,85,99)</only>
+								</li>
+								<li>
+									<!-- Rare PersonaMech Tan --> 
+									<weight>1</weight>
+									<only>RGB(239,222,205)</only>
+								</li>
+							</options>
+							</first>
+						</li>
+					</colorChannels> 
+				</alienPartGenerator>
+				
+	</generalSettings>
+
+	<graphicPaths>
+		<skeleton>PersonaMechs/Skeleton/Dessicated</skeleton>
+		<skull>PersonaMechs/Skeleton/Dessicated_Head</skull>
+		<head>
+		<path>PersonaMechs/Head/</path>
+		<headtypeGraphics>
+		<Sturdy>PersonaMechs/Head/Sturdy</Sturdy>
+		<Persona>PersonaMechs/Head/Persona</Persona>
+		<Tri>PersonaMechs/Head/Tri</Tri>
+		<StylishSubcore>PersonaMechs/Head/Subcore</StylishSubcore>
+		</headtypeGraphics>
+		</head>
+		<body>
+		<path>PersonaMechs/Body/</path>
+		<bodytypeGraphics>
+			<Male>PersonaMechs/Body/Naked_Male</Male>
+		<Female>PersonaMechs/Body/Naked_Female</Female>
+		<Thin>PersonaMechs/Body/Naked_Thin</Thin>
+		<Child>PersonaMechs/Body/Naked_Thin</Child>
+		<Baby>PersonaMechs/Body/Naked_Thin</Baby>
+		<Hulk>PersonaMechs/Body/Naked_Hulk</Hulk>
+		<Fat>PersonaMechs/Body/Naked_Fat</Fat>
+		</bodytypeGraphics>
+		</body>			
+
+	</graphicPaths>
+		<styleSettings>
+		<li>
+		<key>HairDef</key>
+		<value>
+			<hasStyle>false</hasStyle>                			
+		</value>
+		</li>
+		<li>
+		<key>BeardDef</key>
+		<value>
+			<hasStyle>false</hasStyle>
+		</value>
+		</li>
+		<li>
+		<key>TattooDef</key>
+		<value>
+		<hasStyle>false</hasStyle>
+		</value>
+		</li>
+		</styleSettings>
+	
+		<raceRestriction>
+			<blackApparelList>
+					<li MayRequire="RimWorld.Ideology">Apparel_TortureCrown</li>	   
+					<li MayRequire="OskarPotocki.VFE.Pirates"><defName>VFEP_Apparel_Rumsuit</defName></li>	
+			</blackApparelList>
+
+			<!-- Just incase something needs them to eat, emergency explanation is that the fluid reprocessor can act like a crappy bio reactor if given paste.-->
+			<whiteFoodList><li>MealNutrientPaste</li></whiteFoodList>
+			<onlyEatRaceRestrictedFood>true</onlyEatRaceRestrictedFood>
+			<!--
+			<onlyUseRaceRestrictedXenotypes>true</onlyUseRaceRestrictedXenotypes>
+			<whiteXenotypeList><li>Baseliner</li></whiteXenotypeList>
+			-->
+			<onlyHaveRaceRestrictedGenes>true</onlyHaveRaceRestrictedGenes>
+			<whiteGeneList>
+				<li>Sterile</li>
+			</whiteGeneList>
+			<canReproduce>false</canReproduce>
+		</raceRestriction>
+
+		<relationSettings>
+			<relationChanceModifierChild>0</relationChanceModifierChild>
+			<relationChanceModifierExLover>0</relationChanceModifierExLover>
+			<relationChanceModifierExSpouse>0</relationChanceModifierExSpouse>
+			<relationChanceModifierFiance>0</relationChanceModifierFiance>
+			<relationChanceModifierLover>0</relationChanceModifierLover>
+			<relationChanceModifierParent>0</relationChanceModifierParent>
+			<relationChanceModifierSibling>0</relationChanceModifierSibling>
+			<relationChanceModifierSpouse>0</relationChanceModifierSpouse> 
+		</relationSettings> 
+		
+		<thoughtSettings>
+			<cannotReceiveThoughts>
+			<!--
+				<li>EnvironmentCold</li>
+				<li>EnvironmentHot</li>
+				<li>Sick</li>
+				<li>DefeatedMechCluster</li>
+				<li>AnimaScream</li>
+				<li>Joyfuzz</li>
+				<li>HateAura</li>
+				<li>WitnessedDeathBloodlust</li>
+				<li>KilledHumanlikeBloodlust</li>
+				<li>ProsthophileNoProsthetic</li>
+			-->
+				<li>NeedFood</li>
+				<li>NeedComfort</li>
+				<li>AteNutrientPasteMeal</li>
+				<li>AteRawFood</li>
+				<li>SoakingWet</li>
+				<li>AteRottenFood</li>
+				<li>AteKibble</li>
+				<li>RotStink</li>
+				<li>RotStinkLingering</li>
+				<li>AteCorpse</li>
+				<li>AteLavishMeal</li>
+				<li>AteFineMeal</li>
+				<li MayRequire="RimWorld.Ideology">AteHumanlikeMeatDirect</li>
+				<li MayRequire="RimWorld.Ideology">AteHumanlikeMeatDirectCannibal</li>					
+				<li MayRequire="RimWorld.Ideology">AteHumanlikeMeatAsIngredient</li>
+				<li MayRequire="RimWorld.Ideology">AteHumanlikeMeatAsIngredientCannibal</li>
+				<li MayRequire="RimWorld.Ideology">AteInsectMeatDirect</li>
+				<li MayRequire="RimWorld.Ideology">AteInsectMeatAsIngredient</li>
+				<li>SleepDisturbed</li>
+				<li>AteWithoutTable</li>
+				<li>Naked</li>
+				<li>ObservedLayingCorpse</li>
+				<li>EnvironmentDark</li>
+				<li>NeedOutdoors</li>
+				<li>SleptOnGround</li>
+				<li>KnowButcheredHumanlikeCorpse</li>
+				<li>ButcheredHumanlikeCorpse</li>
+				<li>SharedBed</li>
+				<li>ButcheredHumanlikeCorpseOpinion</li>
+				<li>HumanLeatherApparelSad</li>
+				<li>WrongApparelGender</li>
+				<li>NoxiousHaze</li>
+				<li MayRequire="RimWorld.Ideology">NoRecentHumanMeat_Preferred</li>
+				<li MayRequire="RimWorld.Ideology">NoRecentHumanMeat_RequiredStrong</li>		  
+				<li MayRequire="RimWorld.Ideology">NoRecentHumanMeat_RequiredRavenous</li>	
+				<li MayRequire="RimWorld.Ideology">HAR_NoRecentAlienMeat_Preferred</li>
+				<li MayRequire="RimWorld.Ideology">HAR_NoRecentAlienMeat_RequiredStrong</li>		  		  
+				<li MayRequire="RimWorld.Ideology">AteNonCannibalFood_Horrible</li>
+				<li MayRequire="RimWorld.Ideology">AteNonCannibalFood_Know_Horrible</li>	
+				<li MayRequire="RimWorld.Ideology">AteNonCannibalFood_Abhorrent</li>
+				<li MayRequire="RimWorld.Ideology">AteNonCannibalFood_Know_Abhorrent</li>	
+				<li MayRequire="RimWorld.Ideology">AgeReversalDemanded</li>
+				<li>AteFoodInappropriateForTitle</li>
+				<li MayRequire="RimWorld.Ideology">MasochistWearingCollar</li>
+				<li MayRequire="RimWorld.Ideology">MasochistWearingBodyStrap</li>	
+				<li MayRequire="RimWorld.Ideology">AgeReversalReceived</li>
+			</cannotReceiveThoughts>
+
+			<replacerList>
+				<li><original>DefeatedMechCluster</original><replacer>MechClusterPersonaMech</replacer></li>
+				<li><original>WitnessedDeathBloodlust</original><replacer>WitnessedDeathBloodlustPersonaMech</replacer></li>
+				<li><original>KilledHumanlikeBloodlust</original><replacer>KilledHumanlikeBloodlustPersonaMech</replacer></li>
+				<li><original>AnimaScream</original><replacer>AnimaScreamPersonaMech</replacer></li>
+				<!--
+				<li><original>NeedFood</original><replacer>EnergyNeedsPersonaMech</replacer></li>
+				<li><original>EnvironmentCold</original><replacer>EnvironmentColdPersonaMech</replacer></li>
+				<li><original>EnvironmentHot</original><replacer>EnvironmentHotPersonaMech</replacer></li>
+				<li><original>Sick</original><replacer>PersonaMechSick</replacer></li>
+				<li><original>Joyfuzz</original><replacer>JoyfuzzPersonaMech</replacer></li>
+				<li><original>ProsthophileNoProsthetic</original><replacer>ProsthophileNoProstheticPersonaMech</replacer></li>
+				<li><original>HateAura</original><replacer>HateAuraPersonaMech</replacer></li>
+				-->
+			</replacerList>
+
+			<restrictedThoughts>
+				<li>AnimaScreamPersonaMech</li>
+				<li>WitnessedDeathBloodlustPersonaMech</li>
+				<li>KilledHumanlikeBloodlustPersonaMech</li>
+				<li>MechClusterPersonaMech</li>
+				<!--
+				<li>EnergyNeedsPersonaMech</li>
+				<li>EnvironmentColdPersonaMech</li>
+				<li>EnvironmentHotPersonaMech</li>
+				<li>PersonaMechSick</li>
+				<li>MechClusterPersonaMech</li>
+				<li>AnimaScreamPersonaMech</li>
+				<li>JoyfuzzPersonaMech</li>
+				<li>ProsthophileNoProstheticPersonaMech</li>
+				<li>HateAuraPersonaMech</li>
+				-->
+			</restrictedThoughts>
+		</thoughtSettings>
+			
+		<compatibility>
+			<isFlesh>false</isFlesh>
+			<isSentient>true</isSentient> 
+			<hasBlood>false</hasBlood>
+		</compatibility>
+	</alienRace>
+
+</AlienRace.ThingDef_AlienRace>
+
+<AlienRace.RaceSettings>
+	<defName>PersonaMechRaceSettings</defName>
+	<pawnKindSettings>
+		<alienslavekinds>
+			<li>
+				<kindDefs>
+					<li>PersonaMechSlave</li>
+				</kindDefs>
+				<chance>0.8</chance>
+			</li>
+		</alienslavekinds>
+		<alienrefugeekinds>
+			<li>
+				<kindDefs>
+					<li>PersonaMechSpaceRefugee</li>
+				</kindDefs>
+				<chance>1.0</chance>
+			</li>
+		</alienrefugeekinds>
+		<alienwandererkinds>
+			<li>
+				<pawnKindEntries>
+					<li>
+						<kindDefs>
+							<li>PersonaMech_Villager</li>
+						</kindDefs>
+						<chance>1.0</chance>
+					</li>
+				</pawnKindEntries>
+				<factionDefs>
+					<li>PlayerColony</li> 
+				</factionDefs>
+			</li>
+		</alienwandererkinds>
+		<startingColonists>
+			<li>
+				<pawnKindEntries>
+					<li>
+						<kindDefs>
+							<li>PersonaMechColonist</li>
+						</kindDefs>
+						<chance>10.0</chance>
+					</li>
+				</pawnKindEntries>
+				<factionDefs>
+					<li>PlayerColony</li>
+				</factionDefs>
+			</li>
+		</startingColonists>
+	</pawnKindSettings>
+</AlienRace.RaceSettings>
+	
+</Defs>
