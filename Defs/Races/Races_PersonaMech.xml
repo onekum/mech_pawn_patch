@@ -616,7 +616,6 @@
 	</alienRace>
 
 </AlienRace.ThingDef_AlienRace>
-
 <AlienRace.RaceSettings>
 	<defName>PersonaMechRaceSettings</defName>
 	<pawnKindSettings>
