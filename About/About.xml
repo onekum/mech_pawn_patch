@@ -7,13 +7,21 @@
         <li>1.4</li>
     </supportedVersions>
 
-    <description>
-        <li>+ Mechs don't need sleep</li>
-        <li>+ Disable comfort need</li>
-        <li>Persona mechs only use male thin, average, and hulk bodies</li>
-        <li>- Lower psysic sens</li>
-        <li>- Less negot. ability</li>
-    </description>
+<description>
+Patch to make various changes to mech pawns from "Persona Mechanoid Pawns":
+
+- Mechs don't need sleep
+- Disable comfort need (comfort bar still shows but pawn does not incur mood penalties from it)
+- Persona mechs only use male thin, average, and hulk bodies
+- Lower psysic sens.
+- Less negot. ability
+
+These changes are all based on my personal preferences and are what I prefer to play with in-game. This mod is mainly for myself, but I decided to post it in case anyone else has the same perspective I do.
+
+Original mod: https://steamcommunity.com/workshop/filedetails/?id=2925172029
+
+This mod's Github page: https://github.com/onekum/mech_pawn_patch
+</description>
 
     <modDependencies>
         <li>
