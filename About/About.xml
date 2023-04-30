@@ -2,7 +2,7 @@
 <ModMetaData>
     <name>Persona Mechanoid Pawns Patch</name>
     <author>onekun</author>
-    <packageId>onekun.mech_pawn_patch</packageId>
+    <packageId>onekun.mechpawnpatch</packageId>
     <supportedVersions>
         <li>1.4</li>
     </supportedVersions>
