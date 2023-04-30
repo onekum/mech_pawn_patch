@@ -22,7 +22,7 @@
 			<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
 			<InjuryHealingFactor>0.5</InjuryHealingFactor>
 			<SocialImpact>0.65</SocialImpact>
-			<WorkSpeedGlobal>1.25</WorkSpeedGlobal>
+			<WorkSpeedGlobal>1.0</WorkSpeedGlobal>
 			<ResearchSpeed>1.05</ResearchSpeed>
 			<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
