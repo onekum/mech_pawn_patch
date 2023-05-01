@@ -15,18 +15,21 @@
 			<Flammability>0</Flammability>
 			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
 			<ComfyTemperatureMax>250</ComfyTemperatureMax>
+			<!-- disable sleep - from 1.25 to 0 -->
 			<RestRateMultiplier>0</RestRateMultiplier>
-			<PainShockThreshold>9.9</PainShockThreshold>
+			<PainShockThreshold>0.8</PainShockThreshold>
+			<!-- from .75 to .4 -->
 			<PsychicSensitivity>0.4</PsychicSensitivity>
 			<ToxicResistance>1</ToxicResistance>
 			<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
 			<InjuryHealingFactor>0.5</InjuryHealingFactor>
 			<SocialImpact>0.65</SocialImpact>
-			<WorkSpeedGlobal>1.0</WorkSpeedGlobal>
+			<WorkSpeedGlobal>1</WorkSpeedGlobal>
 			<ResearchSpeed>1.05</ResearchSpeed>
 			<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
 			<ArmorRating_Heat>2.00</ArmorRating_Heat>
+			<!-- from .90 to .75 -->
 			<NegotiationAbility>0.75</NegotiationAbility>
 			<ImmunityGainSpeed>900</ImmunityGainSpeed>
 			<LeatherAmount>0</LeatherAmount>
@@ -88,6 +91,7 @@
 		<thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
 		<intelligence>Humanlike</intelligence>
 		<hasGenders>false</hasGenders>
+		<!-- disable sleep - from true to false -->
 		<needsRest>false</needsRest>
 		<makesFootprints>true</makesFootprints>
 		<lifeExpectancy>2500</lifeExpectancy>
@@ -96,7 +100,7 @@
 		<baseBodySize>1.2</baseBodySize>
 		<baseHealthScale>1.1</baseHealthScale>
 		<foodType>Meal</foodType>
-		<baseHungerRate>-0.01</baseHungerRate>
+		<baseHungerRate>-0.25</baseHungerRate>
 		<meatMarketValue>0.0</meatMarketValue>
 		<bloodDef>Filth_MachineBits</bloodDef>
 		<fleshType>PersonaMech</fleshType>
@@ -359,6 +363,7 @@
 							<li>StylishSubcore</li>
 						</headTypes>
 						<bodyTypes>
+							<!-- remove female and fat body types -->
 							<li>Male</li>
 							<li>Thin</li>
 							<li>Hulk</li>
@@ -526,6 +531,7 @@
 				<li>ProsthophileNoProsthetic</li>
 			-->
 				<li>NeedFood</li>
+				<!-- add NeedComfort to disable comfort -->
 				<li>NeedComfort</li>
 				<li>AteNutrientPasteMeal</li>
 				<li>AteRawFood</li>
@@ -616,6 +622,7 @@
 	</alienRace>
 
 </AlienRace.ThingDef_AlienRace>
+
 <AlienRace.RaceSettings>
 	<defName>PersonaMechRaceSettings</defName>
 	<pawnKindSettings>
