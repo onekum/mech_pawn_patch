@@ -18,8 +18,7 @@
 			<!-- disable sleep - from 1.25 to 0 -->
 			<RestRateMultiplier>0</RestRateMultiplier>
 			<PainShockThreshold>0.8</PainShockThreshold>
-			<!-- from .75 to .4 -->
-			<PsychicSensitivity>0.4</PsychicSensitivity>
+			<PsychicSensitivity>0.75</PsychicSensitivity>
 			<ToxicResistance>1</ToxicResistance>
 			<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
 			<InjuryHealingFactor>0.5</InjuryHealingFactor>
