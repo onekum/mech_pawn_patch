@@ -292,6 +292,8 @@
 					</li>	
 					</forcedRaceTraitEntries>	
 					<disallowedTraits>
+						<!-- disallow quick sleeper -->
+						<li><defName>QuickSleeper</defName></li>
 						<li><defName>Transhumanist</defName></li>
 						<li><defName>DrugDesire</defName></li>
 						<li><defName>Cannibal</defName></li>
