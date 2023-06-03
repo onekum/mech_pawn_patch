@@ -1,0 +1,52 @@
+<Patch>
+
+<!-- disable sleep - from 1.25 to 0 -->
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="PersonaMechRace"]/statBases/RestRateMultiplier</xpath>
+  <value>
+    <RestRateMultiplier>0</RestRateMultiplier>
+  </value>
+</Operation>
+
+<!-- from .9 to .75 -->
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="PersonaMechRace"]/statBases/NegotiationAbility</xpath>
+  <value>
+    <NegotiationAbility>0.75</NegotiationAbility>
+  </value>
+</Operation>
+
+<!-- disable sleep - from true to false -->
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="PersonaMechRace"]/race/needsRest</xpath>
+  <value>
+    <needsRest>false</needsRest>
+  </value>
+</Operation>
+
+<!-- disallow quick sleeper -->
+<Operation Class="PatchOperationAdd">
+  <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="PersonaMechRace"]/alienRace/generalSettings/disallowedTraits</xpath>
+  <value>
+    <li><defName>QuickSleeper</defName></li>
+  </value>
+</Operation>
+
+<!-- remove female and fat body types -->
+<Operation Class="PatchOperationRemove">
+  <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="PersonaMechRace"]/alienRace/generalSettings/alienPartGenerator/bodyTypes/li[text()="Female"]</xpath>
+</Operation>
+
+<Operation Class="PatchOperationRemove">
+  <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="PersonaMechRace"]/alienRace/generalSettings/alienPartGenerator/bodyTypes/li[text()="Fat"]</xpath>
+</Operation>
+
+<!-- add NeedComfort to disable comfort -->
+<Operation Class="PatchOperationAdd">
+  <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="PersonaMechRace"]/alienRace/thoughtSettings/cannotReceiveThoughts</xpath>
+  <value>
+    <li>NeedComfort</li>
+  </value>
+</Operation>
+
+</Patch>
